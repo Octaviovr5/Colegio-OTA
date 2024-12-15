@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COLEGIO OTA</title>
+  <link rel="icon" type="image/png" href="images/logobnpng.png">
+  <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body>
+  <!-- Botón para abrir y cerrar el menú -->
+  <span class="menu-btn" onclick="toggleMenu()">&#9776;</span>
+
+  <!-- Menú Lateral (modificado para deslizar desde el lado derecho) -->
+  <div class="sidebar" id="sidebar">
+    <div id="logo-principal">
+      <a href="index.html"><img src="images/logobnpng.png" alt="Logo Colegio OTA"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <!-- <li><a href="acerca.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li> -->
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="content">
+    <header>
+      <div>
+        <a href="index.hmtl"><img src="images/logobnpng.png" alt="LOGO OCTAVIO" class="logobn"></a>
+      
+      <h1>COLEGIO OTA</h1>
+      <h2>GALERIA</h2></div>
+    </header>
+    
+    <main>
+      <section class="gallery">
+        <div class="gallery-item">
+          <img src="images/fachada.png" alt="Imagen 1" class="clickable-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/facahadatrasera.png" alt="Imagen 2" class="clickable-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/recepcion.png" alt="Imagen 3" class="clickable-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/enfermeria.png" alt="Imagen 4" class="clickable-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/arealibre.png" alt="Imagen 5" class="clickable-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/canchas.png" alt="Imagen 6" class="clickable-image">
+        </div>
+        <div class="gallery-item">
+          <img src="images/baños.png" alt="Imagen 7" class="clickable-image">
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 <a href="https://www.instagram.com/octaviovr3/">Octavio Velazquez.</a> All Rights Reserved.</p>
+      <p>
+        <ul class="fh5co-social-icons">
+          <li><a href="https://www.instagram.com/octaviovr3/"><i class="icon-instagram"></i></a></li>
+        </ul>
+      </p>
+    </footer>
+  </div>
+
+  <script src="js/galeria.js"></script>
+  <script src="js/menu.js"></script> <!-- Agregar el archivo JS para el menú -->
+</body>
+</html>

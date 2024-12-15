@@ -1,0 +1,346 @@
+/* Estilos generales */
+body {
+  font-family: "Open Sans", arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #767676;
+  background-color: rgba(218, 131, 200, 0.6);
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+header {
+  display: flex; /* Asegura que los elementos estén en la misma línea */
+  justify-content: center; /* Centra los elementos del header */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: 5px 0; /* Ajusta el padding del header */
+  background-color: #5a5959;
+  color: #000000;
+  border-radius: 10px;
+  position: relative;
+  width: 98%;
+  flex-wrap: wrap;
+  font-family:"Open Sans", arial, sans-serif;
+}
+
+.logobn {
+  width: auto;
+  height: 100%;
+  position: absolute; /* Esto coloca el logo en una posición relativa dentro del header */
+  left: 20px; /* Ajusta la distancia del logo desde la izquierda */
+  
+}
+
+header h1, h2 {
+  margin: 0 10px; /* Espacio entre los títulos */
+  text-align: center; /* Centra el texto de los títulos */
+  color: #000000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 32px; /* Aumenta el tamaño de la fuente */
+}
+
+/* Hover en el logo */
+.logobn:hover {
+  transition: transform 0.3s ease;
+}
+
+.logobn:hover {
+  transform: scale(1.2);
+}
+
+
+/* Estilos Responsivos */
+@media (max-width: 768px) { /* Para tablets y dispositivos más pequeños */
+  header {
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    align-items: center; /* Centra todo el contenido */
+    justify-content: flex-start; /* Alinea el contenido al principio */
+  }
+
+  .logobn {
+    position: static; /* El logo no estará en una posición absoluta */
+    margin-bottom: 10px; /* Añade un margen inferior para separar el logo de los títulos */
+  }
+
+  header h1, h2 {
+    font-family:"Open Sans", arial, sans-serif;
+    font-size: 32px; /* Reduce el tamaño de la fuente para los títulos */
+    margin: 5px 0; /* Reduce los márgenes entre los títulos */
+  }
+}
+
+@media (max-width: 480px) { /* Para dispositivos móviles más pequeños */
+  header {
+    font-family:"Open Sans", arial, sans-serif;
+    padding: 10px 20px 10px 0; /* Aumenta el padding del header para un diseño más cómodo */
+  }
+
+  header h1, h2 {
+    font-family:"Open Sans", arial, sans-serif;
+    font-size: 36px; /* Reduce aún más el tamaño de la fuente */
+  }
+
+  .logobn {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-bottom: 15px; /* Separa más el logo de los títulos en pantallas pequeñas */
+    padding-left: 30%;
+  }
+}
+
+/* Menú Lateral (Deslizable desde la izquierda) */
+.sidebar {
+  width: 0;
+  background-color: #2a2a2a;
+  color: #fff;
+  padding-top: 20px;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  transition: width 0.3s ease; /* Transición suave */
+  z-index: 1000;
+}
+
+#logo-principal {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#logo-principal img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#logo-principal:hover img {
+  transform: scale(1.1);
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 10px 20px;
+}
+
+.sidebar nav ul li:first-child {
+  background-color:#ecc9e5;
+}
+
+.sidebar nav ul li:first-child a:hover{
+  color: rgb(255, 3, 3);
+}
+
+.sidebar nav ul li:nth-child(n+2) a {
+  color: #ecc9e5; /* Color para el primer enlace */
+}
+
+.sidebar nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  transition:transform  0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: #e65353;
+  transform: scale(1.1);
+}
+
+.content {
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  flex: 1;
+}
+
+/* Botón para abrir el menú */
+.menu-btn {
+  font-size: 30px;
+  color: #2a2a2a;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  transition:transform  0.3s ease;
+  padding-left: 5px;
+}
+
+.menu-btn:hover{
+  color: #ecc9e5;
+  transform: scale(1.2);
+}
+
+
+/* Estilo para el contenido cuando el menú está abierto */
+.content.open {
+  margin-left: 250px; /* Espacio dejado por el menú */
+}
+
+.sidebar.open {
+  width: 250px;  /* Ancho del menú cuando está abierto */
+}
+
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 0; /* Menú oculto por defecto */
+  }
+
+  .content {
+    margin-left: 0; /* El contenido ocupa todo el ancho */
+  }
+
+  .menu-btn {
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+  }
+
+  .sidebar.open {
+    width: 200px;  /* Ancho del menú lateral en pantallas pequeñas */
+  }
+
+  .content.open {
+    margin-left: 200px; /* El contenido se desplazará a la derecha cuando el menú esté abierto */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-btn {
+    font-size: 25px; /* Tamaño más pequeño del ícono en pantallas muy pequeñas */
+  }
+}
+
+/* Media Queries para pantallas grandes */
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    width: 250px; /* Menú lateral visible por defecto en pantallas grandes */
+  }
+
+  .content {
+    margin-left: 250px; /* El contenido se desplaza a la derecha para dar espacio al menú lateral */
+  }
+
+  .menu-btn {
+    display: none; /* Ocultar el botón de menú en pantallas grandes */
+  }
+
+  .sidebar.open {
+    width: 300px; /* Ampliar el menú lateral si se abre */
+  }
+
+  .content.open {
+    margin-left: 300px; /* Ajustar el contenido cuando el menú está abierto */
+  }
+}
+
+/* Ajuste para el contenido */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: margin-left 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Estilo del pie de página */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #5a5959;
+  color: #ecc9e5;
+  border-radius: 10px;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+footer a{
+  text-decoration:none;
+  color: #ecc9e5;
+}
+
+footer a:hover{
+  color: #000000;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+footer ul li a:hover {
+  color: #ff7f50;
+}
+
+/* Estilo de la galería */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para la imagen agrandada */
+.img-enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 90%;  /* Limita el tamaño máximo de la imagen */
+  max-height: 80%; /* Limita el tamaño máximo de la imagen */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.img-enlarged.hidden {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
